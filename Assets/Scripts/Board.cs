@@ -269,7 +269,6 @@ public class Board : MonoBehaviour
 
 
             var runTime = 0.0f;
-
             foreach (var b in moveBlockDatas)
             {
                 if (!GameManager.instance.CheckBlock(b.upBlock.Up))

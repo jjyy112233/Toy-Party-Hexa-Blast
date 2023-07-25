@@ -100,7 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frameImage: {fileID: 7047459401357597349}
   block: {fileID: 9002463842074936773}
-  Pos: {x: 0, y: 0, z: 0}
 --- !u!1 &4300371971098790920
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,8 +221,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4300371971098790920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6894ca7286a919f4f967f95bb7f942d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d3858e4e0ef7b346ac723db5d0b5989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   blockImage: {fileID: 7536265433174815725}
-  blockFrame: {fileID: 3617582485969686710}
+  touchCount: 0
+  touchMaxCount: 3

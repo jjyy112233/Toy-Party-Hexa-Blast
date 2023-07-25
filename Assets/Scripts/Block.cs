@@ -183,7 +183,7 @@ public class Block : MonoBehaviour
         touchCount++;
         blockImage.color = new Color(1, 1, 1, (touchMaxCount - touchCount) / (float)touchMaxCount);
 
-        if (touchCount >= 3)
+        if (touchCount >= touchMaxCount)
         {
             SetEmpty();
         }
