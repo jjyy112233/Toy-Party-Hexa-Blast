@@ -176,8 +176,9 @@ public class Board : MonoBehaviour
         block2.transform.position = nextPos1;
 
         var tempID = block1.ID;
-        block1.Setting(block2.ID);
-        block2.Setting(tempID);
+        var tempTouchCount = block1.touchCount;
+        block1.Setting(block2.ID, block2.touchCount);
+        block2.Setting(tempID, tempTouchCount);
     }
 
     struct MoveBlockData
@@ -204,16 +205,19 @@ public class Board : MonoBehaviour
 
     private IEnumerator DownBlcok(List<Block> breakBlockList)
     {
+        List<Block> joinBlocks = new List<Block>();
         foreach (var block in breakBlockList)
         {
-            var joinBlocks = GetJoinBlockList(block, GameManager.instance.GetSpinTopBlockNumber);
+            joinBlocks.AddRange(GetJoinBlockList(block, GameManager.instance.GetSpinTopBlockNumber));
 
-            foreach (var b in joinBlocks)
-            {
-                b.TouchBlock();
-            }
 
             block.SetEmpty();
+        }
+
+        joinBlocks = joinBlocks.Distinct().ToList();
+        foreach (var b in joinBlocks)
+        {
+            b.TouchBlock();
         }
 
         List<Block> moveBlocks = new List<Block>();
@@ -273,7 +277,7 @@ public class Board : MonoBehaviour
                     b.upBlock.SetEmpty();
                 }
                 b.downBlock.transform.position = b.upPos;
-                b.downBlock.Setting(b.upBlockId);
+                b.downBlock.Setting(b.upBlockId, b.upBlock.touchCount);
             }
 
             while (runTime < downDuration)

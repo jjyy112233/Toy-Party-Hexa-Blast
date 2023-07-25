@@ -86,13 +86,14 @@ public class Block : MonoBehaviour
         blockImage.color = Color.white;
         IsUse = false;
     }
-    public void Setting(int id)
+    public void Setting(int id, int tc)
     {
         blockImage.sprite = Resources.Load<Sprite>($"blocks/{id.ToString()}");
         ID = id;
         IsEmpty = false;
         blockImage.color = Color.white;
         IsUse = false;
+        touchCount = tc;
     }
 
     public bool CheckBreak(List<Block> breakBlockList)
@@ -169,8 +170,8 @@ public class Block : MonoBehaviour
         IsEmpty = true;
     }
 
-    [SerializeField]
-    int touchCount = 0;
+    public int touchCount = 0;
+    public int touchMaxCount = 3;
     public virtual void TouchBlock()
     {
         if (ID != GameManager.instance.GetSpinTopBlockNumber)
@@ -180,6 +181,7 @@ public class Block : MonoBehaviour
             return;
 
         touchCount++;
+        blockImage.color = new Color(1, 1, 1, (touchMaxCount - touchCount) / (float)touchMaxCount);
 
         if (touchCount >= 3)
         {
