@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Blocks
+  m_EditorClassIdentifier: 
+  m_GroupName: Blocks
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 0674fc5b9bb8e844eb3386d125d68cf6
+  m_SerializeEntries: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 0201f46ea6d2d124a82a8fa5ee21049d, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3fc78ce74434edd47a8cfec3e216199d, type: 2}
+    - {fileID: 11400000, guid: 9f11132d5fd793948820b8bcf2ef7cd9, type: 2}
+  m_FolderEntryCache: []
+  m_AssetCollectionEntryCache: []
